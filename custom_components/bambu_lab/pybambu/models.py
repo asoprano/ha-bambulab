@@ -208,6 +208,7 @@ class Info:
     total_layers: int
     timelapse: str
     online: bool
+    filename: str
 
     def __init__(self, client, device_type, serial):
         self.client = client
@@ -225,6 +226,7 @@ class Info:
         self.total_layers = 0
         self.timelapse = ""
         self.online = False
+        self.filename = "Unknown"
 
     def info_update(self, data):
         """Update from dict"""
@@ -287,6 +289,7 @@ class Info:
         self.current_layer = data.get("layer_num", self.current_layer)
         self.total_layers = data.get("total_layer_num", self.total_layers)
         self.timelapse = data.get("ipcam", {}).get("timelapse", self.timelapse)
+        self.filename = data.get("subtask", self.filename)
 
 
 @dataclass
