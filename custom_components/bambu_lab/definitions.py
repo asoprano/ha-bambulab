@@ -249,7 +249,8 @@ PRINTER_SENSORS: tuple[BambuLabSensorEntityDescription, ...] = (
         key="filename",
         name="Filename",
         icon="mdi:file",
-        value_fn=lambda self: self.coordinator.get_model().info.filename
+        value_fn=lambda self: self.coordinator.get_model().info.filename,
+        exists_fn=lambda coordinator: coordinator.get_model().supports_feature(Features.FILENAME)
     ),
 )
 
