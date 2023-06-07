@@ -2,7 +2,7 @@
 
 # Bambu Lab
 
-A Home Assistant Integration for Bambu Lab printers
+A Home Assistant Integration for Bambu Lab printers modified by Tony Soprano
 
 ## Setup
 
